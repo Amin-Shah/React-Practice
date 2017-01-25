@@ -64,3 +64,23 @@ var com = React.createClass({
         ReactDOM.render(el,document.getElementById('demo'))
 
 Seventh Example:
+ var com = React.createClass({
+            propTypes:{
+                text: React.PropTypes.string,
+            },
+            getDefaultProps: function(){
+                return{
+                    text: ''
+                };
+            },
+            render: function(){
+                return React.DOM.div(null, 
+                    React.DOM.textarea({DefaultValue: this.props.text}),
+                    React.DOM.h3(null, this.props.text.length)
+                );
+            }
+        });
+        ReactDOM.render(
+            React.createElement(com, {text: "Bob"}),
+            document.getElementById('demo')
+        );
