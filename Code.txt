@@ -1,0 +1,66 @@
+First Example:
+ReactDOM.render(
+            React.DOM.h1(null, "Hello World!"),
+            document.getElementById('demo')
+        );
+
+Second Example:
+ReactDOM.render(
+            React.DOM.h1({id: "heading"}, "Hello React"),
+            document.getElementById('demo')
+        )
+ReactDOM.render(
+            React.DOM.h1({style:{color: "red"}}, "Hello React"),
+            document.getElementById('demo')
+        )
+
+Third Example:
+ReactDOM.render(
+            React.DOM.div(null, React.DOM.span(null, "Hello Span")),
+            document.getElementById('demo')
+        )
+
+Custom Component:
+Fourth Example:
+var component = React.createClass({
+            render: function(){
+                return React.DOM.h1(null, "Pakistan")
+            }
+        });
+        ReactDOM.render(
+            React.createElement(component),
+            document.getElementById('demo')
+        )
+
+Another Way of Create Custom Component:
+
+var component = React.createClass({
+            render: function(){
+                return React.DOM.h1(null, "Pakistan")
+            }
+        });
+        var element = React.createElement(component);
+        ReactDOM.render(element, document.body)
+
+Fifth Example:
+var component = React.createClass({
+            render: function(){
+                return React.DOM.h1(null, "Hello World!  ", this.props.id)
+            }
+        });
+        var Element = React.createElement(component, {id: "heading"});
+        ReactDOM.render(Element, document.body)
+
+Sixth Example:
+var com = React.createClass({
+            propTypes:{
+                name: React.PropTypes.string.isRequired,
+            },
+            render: function(){
+                return React.DOM.h1(null, "Hello World! ", this.props.name)
+            }
+        });
+        var el = React.createElement(com, {name: 1});
+        ReactDOM.render(el,document.getElementById('demo'))
+
+Seventh Example:
